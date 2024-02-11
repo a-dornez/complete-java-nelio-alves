@@ -29,5 +29,3 @@ replay_pid*
 .fake
 /bin/
 
-#copied class files, examples, code alongs
-introducaoPOO/examples/
