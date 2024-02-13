@@ -36,11 +36,11 @@ public class RectangleProperties {
 		System.out.print("Now, insert the rectangle's height: ");
 		 rectangleA.height = scanner.nextDouble();
 		
-		System.out.println( "\nAREA: " + rectangleA.Area(rectangleA.width, rectangleA.height) );
+		System.out.println( "\nAREA: " + rectangleA.Area() );
 		
-		System.out.println( "PERIMETER: " + rectangleA.Perimeter(rectangleA.width, rectangleA.height) );
+		System.out.println( "PERIMETER: " + rectangleA.Perimeter() );
 		
-		System.out.println( "DIAGONAL: " + rectangleA.Diagonal(rectangleA.width, rectangleA.height) );
+		System.out.println( "DIAGONAL: " + rectangleA.Diagonal() );
 		
 		scanner.close();
 	}

@@ -5,27 +5,17 @@ public class Rectangle {
 	public double width;
 	public double height;
 	
-	public double Area( double width, double height ) {
-		this.width = width;
-		this.height = height;
-		
-		double area = width * height;
-		return area;
+	public double Area() {
+		return width * height;
 	}
 	
-	public double Perimeter ( double width, double height ) {
-		this.width = width;
-		this.height = height;
+	public double Perimeter() {
 		
-		double perimeter = ( 2 * width ) + ( 2 * height );
-		return perimeter;
+		return ( 2 * width ) + ( 2 * height );
 	}
 	
-	public double Diagonal ( double width, double height ) {
-		this.width = width;
-		this.height = height;
+	public double Diagonal () {
 		
-		double diagonal = Math.sqrt( (width * width) + (height * height) );
-		return diagonal;
+		return Math.sqrt( (width * width) + (height * height) );
 	}
 }
