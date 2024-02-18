@@ -1,4 +1,4 @@
-package introducaoPOO.exercises.entities;
+package section8.OOPIntroduction.exercises.entities;
 
 public class Rectangle {
 	

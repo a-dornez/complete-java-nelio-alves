@@ -1,0 +1,2 @@
+# 📝 Examples, Code Along, Copied Explanations
+This files _only_ contain code written by Java course instructor Nelio Alves. They illustrate concepts introduced by Nelio and I decided to upload them for reference.

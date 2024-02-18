@@ -1,9 +1,11 @@
-package introducaoPOO.examples;
+package section8.OOPIntroduction.examples;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-public class AreaTrianguloSemPOO {
+import section8.OOPIntroduction.examples.entities.Triangle;
+
+public class AreaTrianguloComPOO {
 
 	public static void main (String[] args) {
 		
@@ -11,22 +13,23 @@ public class AreaTrianguloSemPOO {
 		Locale.setDefault(Locale.US);
 		Scanner scanner = new Scanner(System.in);
 		
-		double xA,xB, xC, yA, yB, yC;
+		//double xA,xB, xC, yA, yB, yC;
+		Triangle x, y;
+		x = new Triangle();
+		y = new Triangle();
 		
 		System.out.println("Enter the measures of triangle X: ");
-		xA = scanner.nextDouble();
-		xB = scanner.nextDouble();
-		xC = scanner.nextDouble();
+		x.a = scanner.nextDouble();
+		x.b = scanner.nextDouble();
+		x.c = scanner.nextDouble();
 		System.out.println("Enter the measures of triangle Y: ");
-		yA = scanner.nextDouble();
-		yB = scanner.nextDouble();
-		yC = scanner.nextDouble();
+		y.a = scanner.nextDouble();
+		y.b = scanner.nextDouble();
+		y.c = scanner.nextDouble();
 		
-		double p  = (xA + xB + xC) / 2.0;
-		double areaX = Math.sqrt(p* (p - xA) * (p - xB) * (p - xC));
+		double areaX = x.area();
 		
-		p  = (yA + yB + yC) / 2.0;
-		double areaY = Math.sqrt(p* (p - yA) * (p - yB) * (p - yC));
+		double areaY = y.area();
 		
 		System.out.printf("Triangle X area: %.4f%n", areaX);
 		System.out.printf("Triangle Y area: %.4f%n", areaY);

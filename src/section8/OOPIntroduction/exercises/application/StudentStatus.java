@@ -7,12 +7,12 @@
  * 		-- Problem by Nelio Alves
  */
 
-package introducaoPOO.exercises.application;
+package section8.OOPIntroduction.exercises.application;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-import introducaoPOO.exercises.entities.Student;
+import section8.OOPIntroduction.exercises.entities.Student;
 
 public class StudentStatus {
 	

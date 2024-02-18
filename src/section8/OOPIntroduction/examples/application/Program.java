@@ -1,9 +1,9 @@
-package introducaoPOO.examples.application;
+package section8.OOPIntroduction.examples.application;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-import introducaoPOO.examples.entities.Product;
+import section8.OOPIntroduction.examples.entities.Product;
 
 public class Program {
 	

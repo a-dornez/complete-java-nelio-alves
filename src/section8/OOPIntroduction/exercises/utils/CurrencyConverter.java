@@ -3,7 +3,7 @@
  * the optimal solution
  */
 
-package introducaoPOO.exercises.utils;
+package section8.OOPIntroduction.exercises.utils;
 
 public class CurrencyConverter {
 	

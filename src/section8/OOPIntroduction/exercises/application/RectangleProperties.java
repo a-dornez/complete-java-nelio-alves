@@ -15,12 +15,12 @@
  * 		-- Problem by Nelio Alves
  */
 
-package introducaoPOO.exercises.application;
+package section8.OOPIntroduction.exercises.application;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-import introducaoPOO.exercises.entities.Rectangle;
+import section8.OOPIntroduction.exercises.entities.Rectangle;
 
 public class RectangleProperties {
 	
