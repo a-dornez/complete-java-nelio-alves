@@ -1,5 +1,10 @@
 /*
  * Class created to apply constructors, method overloading and attributes encapsulation
+ * -------------------------------------------------------------------------------------------
+ *  22-feb-2024: modified constructor with initial deposit after checking instructor solution.
+ *  Instead of directly assigning a value to 'accountBalance', now the 'Deposit()' method is
+ *  used for an initial deposit value. This makes easier for maintenance as "if some bussiness
+ *  rules is modified, you'll need to refactor less code blocks".
  */
 
 package section9.exercises.entities;
@@ -14,7 +19,7 @@ public class Account {
 	public Account( int accountID, String accountHoldersName, double initialDeposit ) {
 		this.accountID = accountID;
 		this.accountHoldersName = accountHoldersName;
-		this.accountBalance = initialDeposit;
+		Deposit(initialDeposit);	
 	}
 	
 	public Account( int accountID, String accountHoldersName ) {
