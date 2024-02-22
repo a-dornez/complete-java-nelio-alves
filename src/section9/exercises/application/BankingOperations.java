@@ -17,6 +17,9 @@
  * displaying updated data on account status after each operation.
  * 
  * 	-- Problem by Nelio Alves
+ * --------------------------------------------------------------------------------------------------------------------------
+ * 21-feb-2024 - refactor: now the conditional defines which constructor should be used. Change made after checking 
+ * instructor's solution: https://github.com/acenelio/encapsulation1-java/blob/master/src/application/Program.java 
  */
 
 package section9.exercises.application;
@@ -33,6 +36,8 @@ public class BankingOperations {
 		Locale.setDefault(Locale.US);
 		Scanner scanner = new Scanner(System.in);
 		
+		Account account;
+		
 		System.out.print("\nWelcome\nPlease, enter account number: ");
 		 int accountID = scanner.nextInt() ;
 		System.out.print("Now, enter account holder's name: ");
@@ -41,13 +46,14 @@ public class BankingOperations {
 		System.out.print("Is there a initial deposit?(y/n): ");
 		 String initialDepositChoice = scanner.nextLine();
 		 
-		double initialDeposit = 0;
 		if ( initialDepositChoice.equalsIgnoreCase("y") ) {
 			System.out.print("Enter initial deposit value: ");
-			 initialDeposit = scanner.nextDouble();
+			 double initialDeposit = scanner.nextDouble();
+			account = new Account(accountID, accountHoldersName, initialDeposit);
 		}
-		
-		Account account = new Account(accountID, accountHoldersName, initialDeposit);
+		else {
+			account = new Account(accountID, accountHoldersName);
+		}
 		
 		System.out.println("\n" + account.toString() );
 		
