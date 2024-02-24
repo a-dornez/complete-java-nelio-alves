@@ -19,7 +19,7 @@ public class Account {
 	public Account( int accountID, String accountHoldersName, double initialDeposit ) {
 		this.accountID = accountID;
 		this.accountHoldersName = accountHoldersName;
-		Deposit(initialDeposit);	
+		Deposit(initialDeposit);
 	}
 	
 	public Account( int accountID, String accountHoldersName ) {
