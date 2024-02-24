@@ -7,7 +7,10 @@
  * For each rent register, inform name, email aswell which room as chosen (0 to 9). Suppose that
  * a vacant room is chosen. Finally, your program should print a report of all occupied hostyel 
  * rooms, sorting them by room number."
- * 		-- Problem by Nelio Alves 
+ *		-- Problem by Nelio Alves 
+ * --------------------------------------------------------------------------------------------
+ *  24-feb-2024 simplified code after checking instructor's solution: removed redundant for and
+ *  class declaration.
  */
 
 package section9.exercises.application;
@@ -27,8 +30,6 @@ public class HostelTenantRegister {
 		final int ROOMS_QUANTITY = 9;
 		Tenant[] hostelRooms = new Tenant[ROOMS_QUANTITY];
 		
-		Tenant tenant;
-		
 		System.out.print("How many rooms will be rented: ");
 		 int roomsToBeRented = scanner.nextInt();
 		
@@ -43,11 +44,8 @@ public class HostelTenantRegister {
 			System.out.print("Insert tenant's room: ");
 			 int tenantRoomNumber = scanner.nextInt();
 			
-			//assigns tenants data to chosen room
-			tenant = new Tenant(tenantName, tenantEmail, tenantRoomNumber);
-			for ( int j = 0 ; j < roomsToBeRented; j++ ) {
-				hostelRooms[tenantRoomNumber] = tenant;
-			}
+			hostelRooms[tenantRoomNumber] = new Tenant(tenantName, tenantEmail, tenantRoomNumber);
+			
 			System.out.print("\n");
 		}
 		
