@@ -27,7 +27,7 @@ public class Account {
 		this.accountHoldersName = accountHoldersName;
 	}
 	
-	public int getAccount() {
+	public int getAccountId() {
 		return accountID;
 	}
 	

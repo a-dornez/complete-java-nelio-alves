@@ -13,12 +13,12 @@
  *  class declaration.
  */
 
-package section9.exercises.application;
+package section10.exercises.application;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-import section9.exercises.entities.Tenant;
+import section10.exercises.entities.Tenant;
 
 public class HostelTenantRegister {
 	

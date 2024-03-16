@@ -2,7 +2,7 @@
  * Pair --> HostelRegister
  * How to write a method that validates data entry? Such as an valid email input?
  */
-package section9.exercises.entities;
+package section10.exercises.entities;
 
 public class Tenant {
 	
