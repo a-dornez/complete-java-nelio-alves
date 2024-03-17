@@ -10,7 +10,7 @@ For each rent register, inform name, email aswell which room as chosen (0 to 9).
 
 Finally, your program should print a report of all occupied hostel rooms, sorting them by room number.
 
-## 📊 Employee Manager
+## 📊 [Employee Manager](./application/EmployeeManager.java)
 
 ### Exercise prompt
 

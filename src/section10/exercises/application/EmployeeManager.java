@@ -39,6 +39,46 @@ public class EmployeeManager {
 			System.out.printf( "Employee #%d:\n", i + 1 );
 			System.out.print("Id: ");
 			Integer employeeId = scanner.nextInt();
+			
+				//following comments are attempts at an Id value validator
+				/*boolean invalidId = false;
+				//validates inserted id and collects readjust rate if id is valid
+				for ( int j = 0; j < employees.toArray().length; j++ ) {
+					if ( employees.get(j).getEmployeeId() == employeeId ) {
+						
+						System.out.print("Enter the percentage: ");
+						double readjustRate = scanner.nextDouble();
+						
+						employees.get(j).SalaryRaise(readjustRate);
+						
+						invalidId = true;
+					}
+				}
+				
+				if ( invalidId == true ) {
+					System.out.println("\nThis Id does not exist!");
+				}
+				*/
+				
+				/*boolean invalidId;
+				Integer employeeId;
+				do {
+					employeeId = scanner.nextInt();
+					invalidId = IdRegisterValidator(employees, employeeId);
+					if (invalidId == true ) {
+						System.out.print("This Id already exxists,please insert another value: ");
+					}
+				} while ( invalidId == true ); 
+				*/
+			
+				/*boolean invalidId = false;
+				do {
+					System.out.print("This Id already exists, please insert another value: ");
+					employeeId = scanner.nextInt();
+					invalidId = IdRegisterValidator(employees, employeeId);
+				} while (invalidId == true);
+				*/
+			
 			System.out.print("Name: ");
 			scanner.nextLine();
 			String employeeName = scanner.nextLine();
@@ -53,6 +93,20 @@ public class EmployeeManager {
 		System.out.print("Enter the employee Id that will have a salary increase: ");
 		int employeeId = scanner.nextInt();
 		
+		//validates inserted id and collects readjust rate if id is valid
+		Employee chosenEmployee = employees.stream().filter(x -> x.getEmployeeId() == employeeId ).findFirst().orElse(null);
+		if ( chosenEmployee != null ) {
+			System.out.print("Enter the readjust percentage: ");
+			double readjustRate = scanner.nextDouble();
+			
+			chosenEmployee.SalaryRaise(readjustRate);
+			
+		}
+		else {
+			System.out.println("\nThis Id does not exist!");
+		}
+		
+		/*
 		boolean invalidId = true;
 		//validates inserted id and collects readjust rate if id is valid
 		for ( int i = 0; i < employees.toArray().length; i++ ) {
@@ -70,6 +124,7 @@ public class EmployeeManager {
 		if ( invalidId == true ) {
 			System.out.println("\nThis Id does not exist!");
 		}
+		*/
 		
 		System.out.println("\nList of employees:");
 		for ( Employee employee : employees ) {
@@ -78,5 +133,19 @@ public class EmployeeManager {
 		
 		scanner.close();
 	}
+	
+	/*
+	static boolean IdRegisterValidator ( List<Employee> employees, Integer employeeId ) {
+		boolean invalidId = false;
+		for ( int i = 0; i < employees.toArray().length; i++ ) {
+			if ( employees.get(i).getEmployeeId() == employeeId ) {
+				invalidId = true;
+				return invalidId;
+			}
+		}
+		
+		return invalidId;
+	}
+	*/
 }
 
