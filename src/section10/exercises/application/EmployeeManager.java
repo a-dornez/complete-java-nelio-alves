@@ -8,8 +8,9 @@
  * "Finally, print an updated employees list. Remember to apply encapsulation, to prevent salary values from being
  * arbitrarily modified. A salary should be only increased by a raise operation based on a percentage."
  * 		-- Problem by Nelio Alves
- * 
- * @ TODO: add Id value validator upon registration: an Id value must not be repeated;
+ * ------------------------------------------------------------------------------------------------------------------------
+ * 17-mar-2024: added id value check upon employee registration, if id value already exists, prints warning and requires
+ * another value
  */
 
 package section10.exercises.application;
@@ -38,47 +39,16 @@ public class EmployeeManager {
 		for ( int i = 0; i < employeesQuantity; i++ ) {
 			System.out.printf( "Employee #%d:\n", i + 1 );
 			System.out.print("Id: ");
-			Integer employeeId = scanner.nextInt();
-			
-				//following comments are attempts at an Id value validator
-				/*boolean invalidId = false;
-				//validates inserted id and collects readjust rate if id is valid
-				for ( int j = 0; j < employees.toArray().length; j++ ) {
-					if ( employees.get(j).getEmployeeId() == employeeId ) {
-						
-						System.out.print("Enter the percentage: ");
-						double readjustRate = scanner.nextDouble();
-						
-						employees.get(j).SalaryRaise(readjustRate);
-						
-						invalidId = true;
-					}
-				}
-				
-				if ( invalidId == true ) {
-					System.out.println("\nThis Id does not exist!");
-				}
-				*/
-				
-				/*boolean invalidId;
-				Integer employeeId;
+			Integer employeeId;
+			boolean validId;
+				//checks if inserted id already exists
 				do {
 					employeeId = scanner.nextInt();
-					invalidId = IdRegisterValidator(employees, employeeId);
-					if (invalidId == true ) {
-						System.out.print("This Id already exxists,please insert another value: ");
+					validId = IdRegisterValidator(employees, employeeId);
+					if (validId == false) {
+						System.out.print("This Id already exists, please insert another value: ");
 					}
-				} while ( invalidId == true ); 
-				*/
-			
-				/*boolean invalidId = false;
-				do {
-					System.out.print("This Id already exists, please insert another value: ");
-					employeeId = scanner.nextInt();
-					invalidId = IdRegisterValidator(employees, employeeId);
-				} while (invalidId == true);
-				*/
-			
+				} while ( validId == false ); 
 			System.out.print("Name: ");
 			scanner.nextLine();
 			String employeeName = scanner.nextLine();
@@ -100,31 +70,10 @@ public class EmployeeManager {
 			double readjustRate = scanner.nextDouble();
 			
 			chosenEmployee.SalaryRaise(readjustRate);
-			
 		}
 		else {
 			System.out.println("\nThis Id does not exist!");
 		}
-		
-		/*
-		boolean invalidId = true;
-		//validates inserted id and collects readjust rate if id is valid
-		for ( int i = 0; i < employees.toArray().length; i++ ) {
-			if ( employees.get(i).getEmployeeId() == employeeId ) {
-				
-				System.out.print("Enter the percentage: ");
-				double readjustRate = scanner.nextDouble();
-				
-				employees.get(i).SalaryRaise(readjustRate);
-				
-				invalidId = false;
-			}
-		}
-		
-		if ( invalidId == true ) {
-			System.out.println("\nThis Id does not exist!");
-		}
-		*/
 		
 		System.out.println("\nList of employees:");
 		for ( Employee employee : employees ) {
@@ -134,18 +83,28 @@ public class EmployeeManager {
 		scanner.close();
 	}
 	
-	/*
-	static boolean IdRegisterValidator ( List<Employee> employees, Integer employeeId ) {
-		boolean invalidId = false;
-		for ( int i = 0; i < employees.toArray().length; i++ ) {
+
+	static boolean IdRegisterValidator ( List<Employee> employees, int employeeId ) {
+		/*
+		Employee chosenEmployee = employees.stream().filter(x -> x.getEmployeeId() == employeeId ).findFirst().orElse(null);
+		System.out.println(chosenEmployee);
+		if ( chosenEmployee != null ) {
+			return false;
+		}
+		else {
+			return true;
+		}
+		*/
+		
+		for ( int i = 0; i < employees.size(); i++ ) {
+			// System.out.println("Shazam!"); //signalizes loop execution, left as a memento of the joy when code started working
 			if ( employees.get(i).getEmployeeId() == employeeId ) {
-				invalidId = true;
-				return invalidId;
+			//	System.out.println("Ahoy!"); //signalizes conditional execution, left as a memento of the joy when code finally started working
+				return false;
 			}
 		}
 		
-		return invalidId;
+		return true;
 	}
-	*/
 }
 
