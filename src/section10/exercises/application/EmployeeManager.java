@@ -84,11 +84,7 @@ public class EmployeeManager {
 		
 		//checks if inserted id is available
 		Employee chosenEmployeeId = employees.stream().filter(x -> x.getEmployeeId() == employeeId ).findFirst().orElse(null);
-		if ( chosenEmployeeId != null ) {
-			return false;
-		}
-		
-		return true;
+		return chosenEmployeeId == null;  
 	}
 }
 
