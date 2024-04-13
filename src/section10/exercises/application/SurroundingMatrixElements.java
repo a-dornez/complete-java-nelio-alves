@@ -30,13 +30,13 @@ public class SurroundingMatrixElements {
 		}
 		
 		int elementToCheckSurroundingValues = scanner.nextInt();
-		
+		//@ TODO: use length properties
 		for ( int i = 0; i < rowsQuantity; i++ ) {
 			for ( int j = 0; j < columnsQuantity; j++ ) {
 				//checks occurrences of chosen value 
 				if ( elementToCheckSurroundingValues == matrix[i][j] ) {
 					System.out.printf("\nPosition %d, %d:\n", i, j );
-					//checks valid coordinates
+					//checks valid coordinates @ TODO: create more self expplanatory code for conditionals. may be using length or variables with obvious names
 					if ( j > 0 ) {	//there's nothing to the left of j == 0 (first column)
 						System.out.printf(" Left: %d\n", matrix[i][j-1] );
 					}
