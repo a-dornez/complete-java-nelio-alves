@@ -13,3 +13,7 @@
 # [Section 11 - Date and Time Operations](./section11/dateTime/README.md)
 
 <br> </br>
+
+# [Section 13 - Enums, Composition](./section13/README.md)
+<br> </br>
+
