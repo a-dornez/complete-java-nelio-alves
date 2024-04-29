@@ -1,3 +1,8 @@
+/*
+ * This is instructor's code.
+ * source https://github.com/acenelio/enum1-java
+ */
+
 package section13.enums.examples.application;
 
 import java.util.Date;

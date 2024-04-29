@@ -1,3 +1,7 @@
+/*
+ * This is instructor's code
+ */
+
 package section13.enums.examples.entities2;
 
 public class Department {
